@@ -1,5 +1,5 @@
 const config = {
-  backendUrl: "http://44.204.220.135:8800", // URL do backend
+  backendUrl: process.env.REACT_APP_BACKEND_URL || "http://localhost:8800",
 };
 
 export default config;
