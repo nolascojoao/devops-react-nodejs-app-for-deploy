@@ -19,7 +19,7 @@ services:
       MYSQL_ROOT_PASSWORD: teste123
       MYSQL_DATABASE: crud
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - ./mariadb_data:/var/lib/mysql
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql  
     ports:
       - "3306:3306"
