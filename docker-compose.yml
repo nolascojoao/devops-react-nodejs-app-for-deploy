@@ -1,0 +1,38 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8800:8800"
+    environment:
+      - DB_HOST=mariadb  
+      - DB_USER=root
+      - DB_PASSWORD=teste123
+      - DB_NAME=crud
+    depends_on:
+      - mariadb  
+    restart: always
+
+  mariadb:  
+    image: mariadb:latest  
+    environment:
+      MYSQL_ROOT_PASSWORD: teste123
+      MYSQL_DATABASE: crud
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql  
+    ports:
+      - "3306:3306"
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://44.196.47.35:8800
+    restart: always
+
+volumes:
+  mariadb_data:  
