@@ -31,7 +31,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_BACKEND_URL=http://44.196.47.35:8800
+      - REACT_APP_BACKEND_URL=http://34.234.175.181:8800
     restart: always
 
 volumes:
