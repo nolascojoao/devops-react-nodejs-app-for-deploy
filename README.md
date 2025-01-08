@@ -8,11 +8,25 @@ Esta aplicação pode ser executada de duas maneiras:
 
 ---
 
+### Pré-requisitos
+
+É necessário ter o **Docker** e o **Docker Compose** instalados na sua máquina ou instância EC2.
+
+---
+
 ## Executar Manualmente
 
 Siga esses passos para rodar a aplicação manualmente na sua máquina ou na sua instância EC2.
 
-### 1. Editar as Variáveis de Ambiente no `docker-compose.yaml`
+### 1. Clonar o Repositório
+
+Na máquina local ou instância EC2, execute:
+```bash
+git clone git@github.com:nolascojoao/devops-react-nodejs-app-for-deploy.git
+cd devops-react-nodejs-app-for-deploy
+```
+
+### 2. Editar as Variáveis de Ambiente no `docker-compose.yaml`
 
 Banco de dados:
 ```yaml
